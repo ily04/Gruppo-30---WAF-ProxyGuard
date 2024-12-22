@@ -1,0 +1,26 @@
+[
+    {
+        "id": "regola1",
+        "nome": "Protezione contro SQL Injection",
+        "enabled": true,
+        "regex": [
+            "(?i)\\b(SELECT|INSERT|DELETE|UPDATE|DROP|UNION|ALTER|CREATE|TRUNCATE|EXEC)\\b",
+            "(?i)\\b(OR|AND)\\b|[0-1]"
+        ]
+    },
+    {
+        "id": "regola2",
+        "nome": "Protezione contro Cross-Site Scripting(XSS)",
+        "enabled": true,
+        "regex": [
+            "(?i)<script.*?>.*?</script>",
+            "(?i)javascript:",
+            "(?i)on\\w*=",
+            "(?i)eval\\(",
+            "(?i)expression\\(",
+            "(?i)alert\\(",
+            "(?i)document\\.location",
+            "(?i)window\\.location"
+        ]
+    }
+]

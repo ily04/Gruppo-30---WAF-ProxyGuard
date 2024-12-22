@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report delle richieste</title>
+
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            table-layout: auto;
+            border-spacing: 20px;
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>Report mensile delle richieste</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Metodo</th>
+                <th>URL</th>
+                <th>Parametri</th>
+                <th>Risultato</th>
+                <th>Timestamp</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for richiesta in richieste %}
+                <tr>
+                    <td>{{ richiesta[1] }}</td>
+                    <td>{{ richiesta[2] }}</td>
+                    <td>{{ richiesta[3] }}</td>
+                    <td>{{ richiesta[4] }}</td>
+                    <td>{{ richiesta[5] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

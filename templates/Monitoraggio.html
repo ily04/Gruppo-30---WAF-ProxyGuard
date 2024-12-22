@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">  <!-- la pagina si adatta al dispositivo -->
+    <title>WAF Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>  <!-- libreria JS per creare grafici -->
+    <script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>  <!-- comunicazione in tempo reale tra client e server-->
+    <link rel="stylesheet" href="{{url_for('static',filename='css/monitoraggio.css')}}">
+</head>
+<body>
+    <h1>Web Application Firewall Dashboard</h1>
+    <p>Monitoraggio in tempo reale delle richieste al WAF</p>
+    <canvas id="statsChart" width="400" height="200"></canvas>
+
+    <!-- JS -->
+    <script>
+        const socket = io();
+
+        const ctx = document.getElementById('statsChart').getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Total Requests', 'Malicious Requests', 'Blocked Requests', 'Rate Limit'],
+                datasets: [{
+                    label: 'Requests',
+                    data: [0, 0, 0, 0], // Dati iniziali
+                    backgroundColor: ['navy', 'royalblue', 'cornflowerblue', 'lightskyblue'],
+                    borderColor: ['navy', 'royalblue', 'cornflowerblue', 'lightskyblue'],
+                    borderWidth: 1
+                }]  
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: true,
+                        labels: {
+                            color: 'rgb(0, 0, 0)',
+                            font: {
+                                size: 14
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Aggiornamento grafico e lo ridisegna con chart.update()
+        socket.on('stats_update', (stats) => {
+            chart.data.datasets[0].data = [
+                stats.total_requests,
+                stats.malicious_requests,
+                stats.blocked_requests,
+                stats.rate_limit
+            ];
+            chart.update();
+        });
+
+        // Richiedi i dati iniziali
+        socket.emit('get_stats');
+    </script>
+</body>
+</html>

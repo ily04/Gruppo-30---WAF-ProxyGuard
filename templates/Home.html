@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <link href="/static/css/Home.css" rel="stylesheet">
+    <title>Home Page</title>
+</head>
+<body>
+    <div class="benvenuto">
+        <h1>Benvenuto nella nostra Home Page:</h1>
+        <a class="accesso" href="{{ url_for('Accedi') }}">Accedi</a>
+    </div>
+    
+    <div class="immagine"> </div>
+    
+    <div class="testo">
+        <h2>Di cosa ci occupiamo?</h2>
+        <p>
+            La nostra web app con WAF integrato è una soluzione all'avanguardia per garantire la sicurezza e l'affidabilità delle tue applicazioni online. 
+            Progettata per proteggere i tuoi sistemi da minacce informatiche.
+            Facile da integrare e utilizzare, questa piattaforma consente una gestione centralizzata della sicurezza, migliorando la performance e riducendo i rischi di attacchi. 
+            Affidati a noi per proteggere i tuoi dati e mantenere sicure le tue applicazioni web!!
+        </p>
+
+    <div class="testo2">
+        <h2>Che tipi di attacchi si posso verificare?</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Descrizione</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>SQL Injection</td>
+                    <td> È un tipo di attacco in cui un malintenzionato inserisce codice SQL dannoso in un modulo di input (come un campo di login). Se l'applicazione non protegge correttamente questi input, l'attaccante può accedere a dati riservati, modificarli o eliminarli.</td>
+                </tr>
+                <tr>
+                    <td>Cross-Site Scripting (XSS)</td>
+                    <td> Questo attacco avviene quando un malintenzionato riesce a iniettare script dannosi in una pagina web che poi viene visualizzata da altri utenti. Ad esempio, potrebbe inserire codice che ruba informazioni sensibili come cookie o credenziali di accesso.</td>
+                </tr>
+            </tbody>
+        </table> 
+    </div>
+
+    <div class="testo3">
+        <h2>Come si possono prevenire questi attacchi?</h2>
+        <p>
+            Un modo efficace per potersi difendere dagli attacchi è utilizzare dei dispositivi di protezione come: i Firewall.
+            Un esempio di Firewall è il WAF.
+        </p>
+    </div>
+
+    <div class="testo4">
+        <h2>Che cos'è il WAF?</h2>
+        <p>
+            I firewall delle applicazioni Web (WAF) sono una difesa di sicurezza fondamentale per siti web, applicazioni mobili. Monitorano, filtrano e bloccano i pacchetti di dati da e verso le applicazioni web.
+            Un WAF analizza le richieste e le risposte tra l'utente e l'applicazione, bloccando attacchi come SQL injection e cross-site scripting.
+        </p>
+    </div> 
+
+    <div class="testo5">
+        <h2>I servizi che offriamo:</h2>
+        <table>
+            <tbody>
+                <tr>
+                    <td><img src="/static/css/immagini/iconaconfigurazione.png" class="iconeutente" alt="Configurazione"></td>
+                    <td>Questa funzione ti permette di aggiungere, modificare o rimuovere regole personalizzabili per la prevenzione di attacchi malevoli.</td>
+                </tr>
+                <tr>
+                    <td> <img src="/static/css/immagini/iconamonitoraggio.png" class="iconeutente" alt="Monitoraggio"></td>
+                    <td>Questa funzione ti permette di monitorare in tempo reale le richieste che vengono effettuate, andandoti a mostrare graficamente
+                        le richiete totali effettuate, quelle bloccate e il Rate Limit.
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="/static/css/immagini/iconareport.png" class="iconeutente" alt="Report"></td>
+                    <td>Questa funzione ti permette di avere uno schema mensile delle richieste che vengono effettuate.</td>
+                </tr>
+            </tbody>
+        </table> 
+    </div>
+
+    <div class="contatti">
+        <table>
+            <thead>
+                <tr>
+                    <th>Luogo:</th>
+                    <th>Contatti:</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> 
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d128759.80712627112!2d16.71726452887357!3d41.111259763980534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1347e8f8f3078d6f%3A0x87254066a3908e1!2sBari%20BA!5e1!3m2!1sit!2sit!4v1734091463171!5m2!1sit!2sit" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </td>
+                    <td>Telefono: 3964892654 <br>Email: webapp1@gmail.com </td>
+                </tr>
+            </tbody>
+        </table> 
+    </div>
+</body>
+</html>

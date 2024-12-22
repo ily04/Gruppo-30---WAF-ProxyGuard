@@ -1,0 +1,115 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #050533f8; /* Colore di sfondo chiaro */
+    color: #070707; /* Colore del testo */
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.benvenuto {
+    background-color: #060b3dce; /* Colore di sfondo della barra */
+    color: white; /* Colore del testo */
+    height: 70px; /* Altezza della barra */
+    display: flex; 
+    align-items: center; /* Allinea il contenuto verticalmente al centro */
+    justify-content: space-between; /* Spaziatura tra titolo e link "Accedi" */
+    padding: 0 20px; /* Spaziatura interna ai lati */
+    position: sticky; /* Fissa la barra in alto durante lo scorrimento */
+}
+.benvenuto h1 {
+    margin-bottom: 10px;
+}
+
+.accesso {
+    color: white; /* Colore del link */
+    text-decoration: none; /* Rimuove la sottolineatura */
+    font-size: 20px; /* Dimensione del testo */
+    margin-left: 100px; 
+    margin-right: 50px;
+    padding: 5px 10px; /* Spaziatura interna per estetica */
+    background-color: transparent; /* Sfondo trasparente iniziale */
+    border-radius: 5px;
+}
+
+.accesso:hover {
+    background-color: rgba(0, 0, 255, 0.253); 
+}
+
+.immagine {
+    margin-top:0px;
+    width: 100%; /* Copre tutta la larghezza della pagina */
+    height:70vh; /* Altezza dinamica: metà della finestra */
+    background-image: url('/static/css/immagini/sfondointro.jpg'); 
+    background-size:1400px; 
+    background-position: center; /* Centra l'immagine */
+    background-repeat: no-repeat;
+}
+
+.testo, .testo2, .testo3, .testo4 , .testo5{
+    margin-top: 30px;
+    background-color: #ffffff; /* Bianco per separare il contenuto */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgb(0, 0, 0); 
+}
+
+.testo h2, .testo2 h2, .testo3 h2, .testo4 .testo5 h2 {
+    color: #080808;
+    margin-bottom: 15px;
+}
+
+.testo p {
+    margin-bottom: 15px;
+}
+
+/* Tabella */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #c7bdbd;
+}
+
+table th {
+    background-color: #0b1244;
+    color: white;
+}
+
+.iconeutente {
+    background-color: #060b3d;
+    width: 60%;
+    height: 50%;
+    position:relative;
+    bottom: 0px;
+}
+
+/* Effetto sulla mappa */
+.contatti iframe {
+    width: 100%;
+    height: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgb(0, 0, 0);
+}
+
+.contatti table {
+    background-color: #060b3d;
+    color: white; /* testo bianco */
+}
+.contatti th, .contatti td {
+    padding: 10px; /*spazio all'interno della tabella */
+}
+
+.contatti .td{
+    font-size: 40px;
+}

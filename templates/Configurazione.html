@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <link href="/static/css/Configurazione.css" rel="stylesheet">
+    <title>Area Configurazione WAF</title>
+</head>
+<body>
+    <div class="funzione">
+        <h1>Compila una funzione a tua scelta:</h1>
+    </div>
+    <div class="configurazione">
+        <div class="containercards"> <!--CONTENITORE DELLE CARDS-->
+            <div class="flashcards">
+                <p class="titoletti">Aggiungi Regola:</p> 
+                <form action="{{ url_for('aggiungi_regola') }}" method="post">
+                    <label>Nome della Regola:</label>
+                    <input type="text" name="nome" required>
+                    <label>Regex:</label>
+                    <input type="text" name="regex" required>
+                    <button type="submit">Aggiungi</button>
+                </form>
+            </div>
+            <div class="card-content">
+                <p>
+                    "Questa funzione serve ad aggiungere una regola a quelle già esistenti
+                    per prevenire attacchi malevoli."
+                </p>
+            </div>
+        </div>
+
+        <div class="containercards2"> <!--CONTENITORE DELLE CARDS-->
+            <div class="flashcards">
+                <p class="titoletti">Modifica Regola:</p> 
+                <form action="{{ url_for('modifica_regola') }}" method="post">
+                    <label>ID della Regola da modificare:</label>
+                    <select name="id"> 
+                        {% for regola in file_regola %}
+                            <option value="{{ regola['id'] }}">{{ regola['id'] }}</option>
+                        {% endfor %}
+                    </select> 
+                    <label>Nuova Regex:</label>
+                    <input type="text" name="regex" required>
+                    <button type="submit">Modifica</button>
+                </form>
+            </div>
+            <div class="card-content">
+                <p>
+                    "Questa funzione serve a modificare una regola già esistente
+                    per prevenire attacchi malevoli."
+                </p>
+            </div>
+        </div>
+
+        <div class="containercards3"> <!--CONTENITORE DELLE CARDS-->
+            <div class="flashcards">
+                <p class="titoletti">Rimuovi Regola:</p> 
+                <form action="{{ url_for('rimuovi_regola') }}" method="post">
+                    <label>ID della Regola da rimuovere:</label>
+                    <select name="id"> 
+                        {% for regola in file_regola %}
+                            <option value="{{ regola['id'] }}">{{ regola['id'] }}</option>
+                        {% endfor %}
+                    </select> 
+                    <button type="submit">Rimuovi</button>
+                </form>
+            </div>
+            <div class="card-content">
+                <p>
+                    "Questa funzione serve a rimuovere una regola da quelle già esistenti
+                    per prevenire attacchi malevoli."
+                </p>
+            </div>
+        </div>
+    </div> 
+</body>
+</html> 

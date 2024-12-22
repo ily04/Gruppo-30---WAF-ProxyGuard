@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1">
+    <link href="/static/css/areaUtente.css" rel="stylesheet">
+    <title>Area Riservata</title>
+</head>
+<body>
+    <div id="areauser"> <!--CONTENITORE DELLA PAGINA-->
+        <div id="benvenuto">
+            <h1>Benvenuto nella tua area riservata</h1>
+        </div>
+
+        <div id="containercards"> <!--CONTENITORE DELLE CARDS-->
+            <div class="flashcards" id="configurazione">
+                <p class="titoletti">Configura WAF</p> 
+                <img src="/static/css/immagini/iconaconfigurazione.png" class="iconeutente" alt="Configurazione">
+            </div>
+
+            <div class="flashcards" id="monitoraggio">
+                <p class="titoletti">Monitoraggio</p>
+                <img src="/static/css/immagini/iconamonitoraggio.png" class="iconeutente" alt="Monitoraggio">
+            </div>
+
+            <div class="flashcards" id="reportistica">
+                <p class="titoletti">Report</p>
+                <img src="/static/css/immagini/iconareport.png" class="iconeutente" alt="Report">
+            </div>
+
+        </div>
+
+        <!-- AL CLICK SU CONFIGURA WAF, CONTENITORE GENERALE DI TUTTA LA CONFIGURAZIONE-->
+         <div id="containerconfig"> 
+            <div id="tcongif">
+                <h1>Configurazione del WAF</h1>
+            </div>
+            <!--IMPOSTAZIONE DEL SERVER DI CONFIGURAZIONE-->
+            <div id="formserver">
+                <form name="serverDestinazione" method="post">
+                    <!--<div id="sottotitolo1">Imposta il server di destinazione:</div>-->
+                    <label>Imposta il server di destinazione:</label>
+                    <div id="form1"> <input type="text" required placeholder="Inserisci URL del server di destinazione"> </div>
+                    <div class="bottoni"><input type="submit" value="Imposta" ></div>
+                </form>   
+            </div>
+
+            <!--CONTENITORE DELLA PARTE DELLE REGOLE PERSONALIZZABILI-->
+            <div id="regolePersonalizzabili">
+                <form id="formregole">
+                    <div class="bottoni"><input type="submit" value="Salva"></div>
+                </form>
+            </div>
+         </div>
+    </div>
+    <footer>
+
+
+    </footer>
+    <!--<script src="static/js/areauser.js"></script>-->
+</body>
+</html>

@@ -1,0 +1,89 @@
+/* ci permette di posizionarlo dove vogliamo noi */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins", sans-serif;
+}
+
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image:url('immagini/immagine2.jpg'); /* Percorso relativo all'immagine */
+    background-size: cover; /* Adatta l'immagine all'intera pagina */
+    background-position: center;
+    background-repeat: no-repeat; /* Evita la ripetizione dell'immagine */
+    background-attachment: fixed; /* Mantiene l'immagine fissa durante lo scrolling */
+}
+
+.wrapper{
+    width: 420px;
+    background: transparent;
+    border:2px solid rgba(255,255,255,.2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+    color:#fff;
+    border-radius: 10px;
+    padding:30px 40px;
+}
+
+.wrapper h1{
+    font-size: 36px;
+    text-align:center;
+}
+
+.wrapper .input-box{
+    width:95%;
+    height: 50px;
+    background: transparent;
+    margin: 30px;
+}
+
+.input-box input{
+    width: 90%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255,255,255,.2);
+    border-radius: 30px;
+    font-size:18px;
+    color:#fff;
+    padding: 20px 45px 20px 20px;
+}
+
+.input-box input::placeholder{
+    color:#fff;
+
+}
+
+.wrapper .btn{
+    width: 50%;
+    height:35px;
+    background: #fff;
+    border:none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    cursor:pointer;
+    font-size: 16px;
+    color:#333;
+    font-weight:600;
+    margin:5px 85px 5px;
+}
+
+.wrapper .register-link{
+    font-size:14.5px;
+    text-align:center;
+    margin:20px 0 15px;
+}
+
+.register-link p a {
+    color:#fff;
+    text-decoration: none;
+    font-weight:600;
+}
+
+
